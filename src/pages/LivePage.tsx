@@ -4,15 +4,12 @@ import { Play, Users, MessageSquare, Radio, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import Hls from "hls.js";
 
-const LIVE_STREAM_URL = "https://edge-004.streamup.eu/sportitalia/sihd_abr2/sportitalia/sihd_1080p/chunks.m3u8";
 
 const channels = [
-  { id: 1, name: "Sportitalia 1", event: "Inter vs Milan", sport: "Serie A", viewers: "45.2K", active: true },
-  { id: 2, name: "Sportitalia 2", event: "Juventus vs Roma", sport: "Serie A", viewers: "32.1K", active: true },
-  { id: 3, name: "Sportitalia Tennis", event: "Sinner vs Djokovic", sport: "ATP Finals", viewers: "28.5K", active: true },
-  { id: 4, name: "Sportitalia Motors", event: "MotoGP Qualifiche", sport: "MotoGP", viewers: "15.3K", active: true },
-  { id: 5, name: "Sportitalia Basket", event: "Lakers vs Celtics", sport: "NBA", viewers: "12.8K", active: true },
-  { id: 6, name: "Sportitalia Extra", event: "Calciomercato LIVE", sport: "Talk Show", viewers: "8.4K", active: true },
+  { id: 1, name: "Sportitalia", event: "Sportitalia HD", sport: "Live", viewers: "45.2K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/sihd_abr2/sportitalia/sihd_1080p/chunks.m3u8", thumbnail: "" },
+  { id: 2, name: "SI Solo Calcio", event: "Solo Calcio", sport: "Calcio", viewers: "32.1K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/sisolocalcio_abr/sportitalia/sisolocalcio_1080p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/02/si_calcio.png" },
+  { id: 3, name: "SI Live 24", event: "Primavera TV", sport: "Live", viewers: "28.5K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/silive24_abr/sportitalia/silive24_480p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/08/primaveratv.jpg" },
+  { id: 4, name: "Lazio Style", event: "Lazio Style Channel", sport: "Calcio", viewers: "15.3K", active: true, streamUrl: "https://edge-003.streamup.eu/origin/laziostyle_abr/origin/laziostyle_1080p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/02/lazio_style.jpg" },
 ];
 
 const epgData = [
@@ -33,15 +30,17 @@ const LivePage = () => {
     const video = videoRef.current;
     if (!video) return;
 
+    const streamUrl = selectedChannel.streamUrl;
+
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource(LIVE_STREAM_URL);
+      hls.loadSource(streamUrl);
       hls.attachMedia(video);
       return () => hls.destroy();
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      video.src = LIVE_STREAM_URL;
+      video.src = streamUrl;
     }
-  }, []);
+  }, [selectedChannel]);
 
   return (
     <Layout>
@@ -55,7 +54,8 @@ const LivePage = () => {
                 autoPlay
                 muted
                 controls
-                className="absolute inset-0 w-full h-full object-cover"
+                controlsList="noplaybackrate"
+                className="absolute inset-0 w-full h-full object-cover [&::-webkit-media-controls-timeline]:hidden [&::-webkit-media-controls-current-time-display]:hidden [&::-webkit-media-controls-time-remaining-display]:hidden"
               />
 
               {/* Live indicator */}
@@ -131,9 +131,13 @@ const LivePage = () => {
                       selectedChannel.id === ch.id ? "bg-primary/10" : "hover:bg-secondary"
                     }`}
                   >
-                    <div className="w-16 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-                      <Play className="w-4 h-4 text-muted-foreground/50" />
-                    </div>
+                    <div className="w-16 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 overflow-hidden">
+                       {ch.thumbnail ? (
+                         <img src={ch.thumbnail} alt={ch.name} className="w-full h-full object-cover" />
+                       ) : (
+                         <Play className="w-4 h-4 text-muted-foreground/50" />
+                       )}
+                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-xs text-muted-foreground">{ch.name}</p>
                       <p className="text-sm font-medium text-foreground truncate">{ch.event}</p>
