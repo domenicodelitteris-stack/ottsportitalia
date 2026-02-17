@@ -41,9 +41,9 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-          <button className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+          <Link to="/cerca" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
             <Search className="w-5 h-5" />
-          </button>
+          </Link>
           <button className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors relative">
             <Bell className="w-5 h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-live rounded-full animate-pulse-live" />
