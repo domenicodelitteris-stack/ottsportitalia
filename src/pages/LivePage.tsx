@@ -1,7 +1,10 @@
 import Layout from "@/components/Layout";
 import LiveBadge from "@/components/LiveBadge";
 import { Play, Users, MessageSquare, Radio, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Hls from "hls.js";
+
+const LIVE_STREAM_URL = "https://edge-004.streamup.eu/sportitalia/sihd_abr2/sportitalia/sihd_1080p/chunks.m3u8";
 
 const channels = [
   { id: 1, name: "Sportitalia 1", event: "Inter vs Milan", sport: "Serie A", viewers: "45.2K", active: true },
@@ -24,6 +27,21 @@ const epgData = [
 const LivePage = () => {
   const [selectedChannel, setSelectedChannel] = useState(channels[0]);
   const [showChat, setShowChat] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(LIVE_STREAM_URL);
+      hls.attachMedia(video);
+      return () => hls.destroy();
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = LIVE_STREAM_URL;
+    }
+  }, []);
 
   return (
     <Layout>
@@ -32,12 +50,13 @@ const LivePage = () => {
           {/* Main Player */}
           <div className="flex-1">
             <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary mb-4">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center">
-                <div className="text-center">
-                  <Play className="w-16 h-16 text-muted-foreground/30 mx-auto mb-3" />
-                  <p className="text-muted-foreground text-sm">Player Placeholder</p>
-                </div>
-              </div>
+              <video
+                ref={videoRef}
+                autoPlay
+                muted
+                controls
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
               {/* Live indicator */}
               <div className="absolute top-4 left-4">
