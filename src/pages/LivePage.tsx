@@ -6,7 +6,7 @@ import Hls from "hls.js";
 
 
 const channels = [
-  { id: 1, name: "Sportitalia", event: "Sportitalia HD", sport: "Live", viewers: "45.2K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/sihd_abr2/sportitalia/sihd_1080p/chunks.m3u8", thumbnail: "" },
+  { id: 1, name: "Sportitalia", event: "Sportitalia HD", sport: "Live", viewers: "45.2K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/sihd_abr2/sportitalia/sihd_1080p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/02/si_hd.png" },
   { id: 2, name: "SI Solo Calcio", event: "Solo Calcio", sport: "Calcio", viewers: "32.1K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/sisolocalcio_abr/sportitalia/sisolocalcio_1080p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/02/si_calcio.png" },
   { id: 3, name: "SI Live 24", event: "Primavera TV", sport: "Live", viewers: "28.5K", active: true, streamUrl: "https://edge-004.streamup.eu/sportitalia/silive24_abr/sportitalia/silive24_480p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/08/primaveratv.jpg" },
   { id: 4, name: "Lazio Style", event: "Lazio Style Channel", sport: "Calcio", viewers: "15.3K", active: true, streamUrl: "https://edge-003.streamup.eu/origin/laziostyle_abr/origin/laziostyle_1080p/chunks.m3u8", thumbnail: "https://sportitalia.s3.eu-west-par.io.cloud.ovh.net/wp-content/uploads/2024/02/lazio_style.jpg" },
