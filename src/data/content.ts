@@ -61,8 +61,24 @@ export const continueWatching: ContentItem[] = [
   { slug: "storia-grande-torino", title: "La storia del Grande Torino", subtitle: "Documentario", duration: "45:00", progress: 80, image: imgSpalletti, description: "Il documentario sulla leggendaria squadra del Grande Torino. Una storia di calcio, passione e tragedia." },
 ];
 
+// VOD content (also available for detail pages)
+export const vodItems: ContentItem[] = [
+  { slug: "serie-a-25-highlights", title: "Serie A - Giornata 25 Highlights", subtitle: "Tutti i gol", duration: "32:00", category: "Calcio", image: imgOsimhen, description: "Tutti i gol e gli highlights della 25ª giornata di Serie A." },
+  { slug: "sinner-road-to-number1", title: "Sinner: Road to Number 1", subtitle: "Documentario", duration: "58:00", category: "Tennis", image: imgTabanelli, description: "Il documentario sulla scalata di Jannik Sinner verso il numero 1 del mondo." },
+  { slug: "motogp-2025-best-moments", title: "MotoGP 2025 - Best Moments", subtitle: "Compilation", duration: "45:00", category: "MotoGP", image: imgBorussia, description: "I migliori momenti della stagione MotoGP 2025." },
+  { slug: "calciomercato-speciale", title: "Calciomercato Speciale", subtitle: "Talk Show", duration: "1:20:00", category: "Talk Show", image: imgSpalletti, description: "Lo speciale calciomercato con tutte le ultime trattative." },
+  { slug: "f1-monza-dietro-quinte", title: "F1 Monza: Dietro le quinte", subtitle: "Esclusiva", duration: "35:00", category: "F1", image: imgFonseca, description: "Dietro le quinte del Gran Premio di Monza di Formula 1." },
+  { slug: "nba-allstar-weekend", title: "NBA All-Star Weekend", subtitle: "Highlights", duration: "28:00", category: "Basket", image: imgCannavaro, description: "Gli highlights dell'NBA All-Star Weekend." },
+  { slug: "giro-italia-2025-preview", title: "Giro d'Italia 2025 Preview", subtitle: "Analisi", duration: "22:00", category: "Ciclismo", image: imgLecceCagliari, description: "L'analisi e la preview del Giro d'Italia 2025." },
+  { slug: "champions-league-review", title: "Champions League Review", subtitle: "Week 6", duration: "40:00", category: "Calcio", image: imgChivu, description: "La review della sesta giornata di Champions League." },
+  { slug: "intervista-sinner", title: "Intervista: Jannik Sinner", subtitle: "Esclusiva Sportitalia", duration: "18:00", category: "Tennis", image: imgAlisson, description: "L'intervista esclusiva a Jannik Sinner su Sportitalia." },
+  { slug: "top-50-gol-serie-a", title: "Top 50 Gol Serie A 2025", subtitle: "Classifica", duration: "25:00", category: "Calcio", image: imgEditoriale, description: "La classifica dei 50 gol più belli della Serie A 2025." },
+  { slug: "volley-nations-league", title: "Volley Nations League", subtitle: "Italia vs Brasile", duration: "1:45:00", category: "Volley", image: imgTabanelli, description: "Italia vs Brasile nella Volley Nations League." },
+  { slug: "bagnaia-campione-mondo", title: "Bagnaia: Campione del Mondo", subtitle: "Documentario", duration: "52:00", category: "MotoGP", image: imgBorussia, description: "Il documentario su Bagnaia Campione del Mondo MotoGP." },
+];
+
 // Lookup map for all content by slug
-const allContent = [...liveNow, ...upcoming, ...highlights, ...trending, ...continueWatching];
+const allContent = [...liveNow, ...upcoming, ...highlights, ...trending, ...continueWatching, ...vodItems];
 const contentMap = new Map<string, ContentItem>();
 allContent.forEach((item) => contentMap.set(item.slug, item));
 
