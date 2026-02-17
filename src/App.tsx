@@ -10,6 +10,7 @@ import VODPage from "./pages/VODPage";
 import EventPage from "./pages/EventPage";
 import AccountPage from "./pages/AccountPage";
 import CalendarioPage from "./pages/CalendarioPage";
+import SearchPage from "./pages/SearchPage";
 
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/event/:id" element={<EventPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/calendario" element={<CalendarioPage />} />
+          <Route path="/cerca" element={<SearchPage />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
