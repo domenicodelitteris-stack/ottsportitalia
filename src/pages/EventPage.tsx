@@ -17,7 +17,9 @@ const EventPage = () => {
       <Layout>
         <div className="container py-20 text-center">
           <p className="text-muted-foreground text-lg">Contenuto non trovato</p>
-          <Link to="/" className="text-primary hover:underline mt-4 inline-block">Torna alla Home</Link>
+          <Link to="/" className="text-primary hover:underline mt-4 inline-block">
+            Torna alla Home
+          </Link>
         </div>
       </Layout>
     );
@@ -29,7 +31,10 @@ const EventPage = () => {
     <Layout>
       <div className="container py-6">
         {/* Back */}
-        <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
+        >
           <ArrowLeft className="w-4 h-4" /> Indietro
         </Link>
 
@@ -57,7 +62,7 @@ const EventPage = () => {
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <button
                   onClick={() => setPlaying(true)}
-                  className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary transition-colors"
+                  className="w-24 h-24 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary transition-colors"
                 >
                   <Play className="w-7 h-7 text-primary-foreground fill-current ml-1" />
                 </button>
@@ -85,11 +90,11 @@ const EventPage = () => {
               <div className="flex items-center gap-2 mb-2">
                 {content.isLive && <LiveBadge />}
                 {content.category && (
-                  <span className="text-xs px-2 py-0.5 rounded-md bg-primary/10 text-primary font-medium">{content.category}</span>
+                  <span className="text-xs px-2 py-0.5 rounded-md bg-primary/10 text-primary font-medium">
+                    {content.category}
+                  </span>
                 )}
-                {content.subtitle && (
-                  <span className="text-xs text-muted-foreground">{content.subtitle}</span>
-                )}
+                {content.subtitle && <span className="text-xs text-muted-foreground">{content.subtitle}</span>}
               </div>
               <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground">{content.title}</h1>
               {content.description && (
