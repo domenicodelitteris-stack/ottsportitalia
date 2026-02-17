@@ -18,18 +18,18 @@ import imgEditoriale from "@/assets/content/serie-a-editoriale.jpg";
 const categories = ["Tutti", "Calcio", "Tennis", "MotoGP", "F1", "Basket", "Volley", "Ciclismo", "Talk Show"];
 
 const vodContent = [
-  { title: "Serie A - Giornata 25 Highlights", subtitle: "Tutti i gol", duration: "32:00", category: "Calcio", image: imgOsimhen },
-  { title: "Sinner: Road to Number 1", subtitle: "Documentario", duration: "58:00", category: "Tennis", image: imgTabanelli },
-  { title: "MotoGP 2025 - Best Moments", subtitle: "Compilation", duration: "45:00", category: "MotoGP", image: imgBorussia },
-  { title: "Calciomercato Speciale", subtitle: "Talk Show", duration: "1:20:00", category: "Talk Show", image: imgSpalletti },
-  { title: "F1 Monza: Dietro le quinte", subtitle: "Esclusiva", duration: "35:00", category: "F1", image: imgFonseca },
-  { title: "NBA All-Star Weekend", subtitle: "Highlights", duration: "28:00", category: "Basket", image: imgCannavaro },
-  { title: "Giro d'Italia 2025 Preview", subtitle: "Analisi", duration: "22:00", category: "Ciclismo", image: imgLecceCagliari },
-  { title: "Champions League Review", subtitle: "Week 6", duration: "40:00", category: "Calcio", image: imgChivu },
-  { title: "Intervista: Jannik Sinner", subtitle: "Esclusiva Sportitalia", duration: "18:00", category: "Tennis", image: imgAlisson },
-  { title: "Top 50 Gol Serie A 2025", subtitle: "Classifica", duration: "25:00", category: "Calcio", image: imgEditoriale },
-  { title: "Volley Nations League", subtitle: "Italia vs Brasile", duration: "1:45:00", category: "Volley", image: imgTabanelli },
-  { title: "Bagnaia: Campione del Mondo", subtitle: "Documentario", duration: "52:00", category: "MotoGP", image: imgBorussia },
+  { slug: "serie-a-25-highlights", title: "Serie A - Giornata 25 Highlights", subtitle: "Tutti i gol", duration: "32:00", category: "Calcio", image: imgOsimhen },
+  { slug: "sinner-road-to-number1", title: "Sinner: Road to Number 1", subtitle: "Documentario", duration: "58:00", category: "Tennis", image: imgTabanelli },
+  { slug: "motogp-2025-best-moments", title: "MotoGP 2025 - Best Moments", subtitle: "Compilation", duration: "45:00", category: "MotoGP", image: imgBorussia },
+  { slug: "calciomercato-speciale", title: "Calciomercato Speciale", subtitle: "Talk Show", duration: "1:20:00", category: "Talk Show", image: imgSpalletti },
+  { slug: "f1-monza-dietro-quinte", title: "F1 Monza: Dietro le quinte", subtitle: "Esclusiva", duration: "35:00", category: "F1", image: imgFonseca },
+  { slug: "nba-allstar-weekend", title: "NBA All-Star Weekend", subtitle: "Highlights", duration: "28:00", category: "Basket", image: imgCannavaro },
+  { slug: "giro-italia-2025-preview", title: "Giro d'Italia 2025 Preview", subtitle: "Analisi", duration: "22:00", category: "Ciclismo", image: imgLecceCagliari },
+  { slug: "champions-league-review", title: "Champions League Review", subtitle: "Week 6", duration: "40:00", category: "Calcio", image: imgChivu },
+  { slug: "intervista-sinner", title: "Intervista: Jannik Sinner", subtitle: "Esclusiva Sportitalia", duration: "18:00", category: "Tennis", image: imgAlisson },
+  { slug: "top-50-gol-serie-a", title: "Top 50 Gol Serie A 2025", subtitle: "Classifica", duration: "25:00", category: "Calcio", image: imgEditoriale },
+  { slug: "volley-nations-league", title: "Volley Nations League", subtitle: "Italia vs Brasile", duration: "1:45:00", category: "Volley", image: imgTabanelli },
+  { slug: "bagnaia-campione-mondo", title: "Bagnaia: Campione del Mondo", subtitle: "Documentario", duration: "52:00", category: "MotoGP", image: imgBorussia },
 ];
 
 const VODPage = () => {
@@ -90,7 +90,7 @@ const VODPage = () => {
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {filtered.map((item, i) => (
-            <ContentCard key={i} {...item} />
+            <ContentCard key={i} {...item} href={`/event/${item.slug}`} />
           ))}
         </div>
 

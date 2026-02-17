@@ -16,7 +16,7 @@ const slides = [
     tag: "Serie A • Giornata 25",
     title: "Inter vs Milan",
     description: "Derby della Madonnina in diretta. Segui il match più atteso della stagione su Sportitalia.",
-    href: "/event/1",
+    href: "/event/inter-vs-milan",
   },
   {
     image: imgChivu,
@@ -24,28 +24,28 @@ const slides = [
     tag: "Serie A • Giornata 25",
     title: "Juventus vs Roma",
     description: "Il big match dell'Allianz Stadium. Due squadre in lotta per la Champions League.",
-    href: "/event/2",
+    href: "/event/juventus-vs-roma",
   },
   {
     image: imgEditoriale,
     tag: "Highlights • Serie A",
     title: "I migliori gol della giornata",
     description: "Rivivi tutte le emozioni della 25ª giornata di Serie A con i gol più belli.",
-    href: "/vod",
+    href: "/event/top-10-save",
   },
   {
     image: imgBorussia,
     tag: "Champions League",
     title: "Borussia Dortmund vs Napoli",
     description: "La sfida europea più attesa. Il Napoli cerca il passaggio del turno in Germania.",
-    href: "/event/3",
+    href: "/event/champions-league-draw",
   },
   {
     image: imgSpalletti,
     tag: "Nazionale • Intervista",
     title: "Spalletti: il progetto azzurro",
     description: "L'intervista esclusiva al CT della Nazionale italiana sul futuro del calcio azzurro.",
-    href: "/vod",
+    href: "/event/intervista-spalletti",
   },
 ];
 
