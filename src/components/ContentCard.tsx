@@ -58,7 +58,7 @@ const ContentCard = ({
         </div>
 
         {/* Duration / Viewers */}
-        {/*} <div className="absolute bottom-2 right-2">
+        {/*<div className="absolute bottom-2 right-2">
           {isLive && viewers ? (
             <span className="text-[10px] px-2 py-0.5 rounded-md bg-background/70 text-foreground font-medium backdrop-blur-sm">
               {viewers} spettatori
