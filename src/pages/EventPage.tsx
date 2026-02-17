@@ -38,10 +38,10 @@ const EventPage = () => {
           {playing ? (
             <>
               <iframe
-                src="https://www.youtube.com/embed/6qQ6uVYw0Kk?autoplay=1&rel=0"
+                src="https://players.brightcove.net/6313885189001/default_default/index.html?videoId=6389464048112"
                 title={content.title}
                 className="absolute inset-0 w-full h-full"
-                allow="autoplay; encrypted-media"
+                allow="encrypted-media"
                 allowFullScreen
               />
               <button
