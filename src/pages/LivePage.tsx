@@ -63,11 +63,6 @@ const LivePage = () => {
                 <LiveBadge size="md" />
               </div>
 
-              {/* Viewer count */}
-              <div className="absolute top-4 right-4 flex items-center gap-2 bg-background/70 backdrop-blur-sm rounded-lg px-3 py-1.5">
-                <Users className="w-3.5 h-3.5 text-muted-foreground" />
-                <span className="text-xs font-medium text-foreground">{selectedChannel.viewers}</span>
-              </div>
             </div>
 
             {/* Channel Info */}
