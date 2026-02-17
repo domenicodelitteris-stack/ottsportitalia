@@ -7,7 +7,6 @@ const navItems = [
   { label: "Live", path: "/live" },
   { label: "On Demand", path: "/vod" },
   { label: "Calendario", path: "/calendario" },
-  { label: "Abbonamenti", path: "/pricing" },
 ];
 
 const Header = () => {
