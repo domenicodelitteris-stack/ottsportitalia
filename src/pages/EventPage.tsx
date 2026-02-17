@@ -38,7 +38,7 @@ const EventPage = () => {
           {playing ? (
             <>
               <iframe
-                src="https://players.brightcove.net/6313885189001/default_default/index.html?videoId=6389464048112"
+                src="https://players.brightcove.net/6313885189001/2aMfaPIpb_default/index.html?videoId=6389464048112"
                 title={content.title}
                 className="absolute inset-0 w-full h-full"
                 allow="encrypted-media"
