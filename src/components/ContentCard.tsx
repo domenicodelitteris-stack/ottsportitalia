@@ -12,6 +12,7 @@ interface ContentCardProps {
   progress?: number;
   href?: string;
   wide?: boolean;
+  image?: string;
 }
 
 const ContentCard = ({
@@ -24,6 +25,7 @@ const ContentCard = ({
   progress,
   href = "/event/1",
   wide = false,
+  image,
 }: ContentCardProps) => {
   return (
     <Link
@@ -32,10 +34,14 @@ const ContentCard = ({
     >
       {/* Thumbnail */}
       <div className="relative aspect-video rounded-xl overflow-hidden bg-secondary mb-3">
-        {/* Placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center">
-          <Play className="w-10 h-10 text-muted-foreground/40" />
-        </div>
+        {/* Thumbnail */}
+        {image ? (
+          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center">
+            <Play className="w-10 h-10 text-muted-foreground/40" />
+          </div>
+        )}
 
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

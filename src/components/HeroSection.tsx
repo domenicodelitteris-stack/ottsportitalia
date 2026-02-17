@@ -1,12 +1,13 @@
 import { Play, Info, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 import LiveBadge from "./LiveBadge";
+import heroImg from "@/assets/content/osimhen.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
-      {/* Background placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-background to-background" />
+      {/* Background image */}
+      <img src={heroImg} alt="Live Event" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 

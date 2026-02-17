@@ -6,43 +6,54 @@ import LiveBadge from "@/components/LiveBadge";
 import { Link } from "react-router-dom";
 import { Calendar, TrendingUp, Clock, Star } from "lucide-react";
 
+import imgOsimhen from "@/assets/content/osimhen.jpg";
+import imgLecceCagliari from "@/assets/content/lecce-cagliari.jpg";
+import imgTabanelli from "@/assets/content/tabanelli-freestyle.jpg";
+import imgSpalletti from "@/assets/content/spalletti.jpg";
+import imgBorussia from "@/assets/content/borussia-dortmund.jpg";
+import imgChivu from "@/assets/content/chivu.jpg";
+import imgCannavaro from "@/assets/content/cannavaro-baggio-totti.jpg";
+import imgFonseca from "@/assets/content/fonseca.jpg";
+import imgAlisson from "@/assets/content/alisson-santos-napoli.jpg";
+import imgEditoriale from "@/assets/content/serie-a-editoriale.jpg";
+
 const liveNow = [
-  { title: "Inter vs Milan", subtitle: "Serie A • 2° Tempo", category: "Calcio", viewers: "45.2K" },
-  { title: "Juventus vs Roma", subtitle: "Serie A • 1° Tempo", category: "Calcio", viewers: "32.1K" },
-  { title: "ATP Finals - Sinner vs Djokovic", subtitle: "Set 2", category: "Tennis", viewers: "28.5K" },
-  { title: "MotoGP Mugello - Qualifiche", subtitle: "In corso", category: "MotoGP", viewers: "15.3K" },
-  { title: "NBA: Lakers vs Celtics", subtitle: "Q3", category: "Basket", viewers: "12.8K" },
+  { title: "Inter vs Milan", subtitle: "Serie A • 2° Tempo", category: "Calcio", viewers: "45.2K", image: imgChivu },
+  { title: "Juventus vs Roma", subtitle: "Serie A • 1° Tempo", category: "Calcio", viewers: "32.1K", image: imgEditoriale },
+  { title: "ATP Finals - Sinner vs Djokovic", subtitle: "Set 2", category: "Tennis", viewers: "28.5K", image: imgTabanelli },
+  { title: "MotoGP Mugello - Qualifiche", subtitle: "In corso", category: "MotoGP", viewers: "15.3K", image: imgBorussia },
+  { title: "NBA: Lakers vs Celtics", subtitle: "Q3", category: "Basket", viewers: "12.8K", image: imgCannavaro },
 ];
 
 const upcoming = [
-  { title: "Napoli vs Lazio", subtitle: "Domani 20:45 • Serie A", category: "Calcio" },
-  { title: "F1 GP Monza - Prove Libere", subtitle: "Sab 14:00", category: "F1" },
-  { title: "Champions League Draw", subtitle: "Lun 12:00", category: "Calcio" },
-  { title: "Volley Italia vs Francia", subtitle: "Dom 18:00", category: "Volley" },
-  { title: "Giro d'Italia - Tappa 15", subtitle: "Dom 13:00", category: "Ciclismo" },
+  { title: "Napoli vs Lazio", subtitle: "Domani 20:45 • Serie A", category: "Calcio", image: imgAlisson },
+  { title: "F1 GP Monza - Prove Libere", subtitle: "Sab 14:00", category: "F1", image: imgFonseca },
+  { title: "Champions League Draw", subtitle: "Lun 12:00", category: "Calcio", image: imgOsimhen },
+  { title: "Volley Italia vs Francia", subtitle: "Dom 18:00", category: "Volley", image: imgLecceCagliari },
+  { title: "Giro d'Italia - Tappa 15", subtitle: "Dom 13:00", category: "Ciclismo", image: imgSpalletti },
 ];
 
 const highlights = [
-  { title: "Goal spettacolare di Lautaro Martinez", subtitle: "Serie A • Highlights", duration: "3:24", category: "Calcio" },
-  { title: "Sinner - Match Point incredibile", subtitle: "ATP Finals", duration: "1:45", category: "Tennis" },
-  { title: "Top 10 Save della giornata", subtitle: "Serie A", duration: "5:12", category: "Calcio" },
-  { title: "Bagnaia sorpasso all'ultima curva", subtitle: "MotoGP", duration: "2:30", category: "MotoGP" },
-  { title: "Dunk della settimana NBA", subtitle: "NBA Highlights", duration: "4:15", category: "Basket" },
-  { title: "Gol più belli di Gennaio", subtitle: "Compilation", duration: "8:30", category: "Calcio" },
+  { title: "Goal spettacolare di Lautaro Martinez", subtitle: "Serie A • Highlights", duration: "3:24", category: "Calcio", image: imgOsimhen },
+  { title: "Sinner - Match Point incredibile", subtitle: "ATP Finals", duration: "1:45", category: "Tennis", image: imgTabanelli },
+  { title: "Top 10 Save della giornata", subtitle: "Serie A", duration: "5:12", category: "Calcio", image: imgEditoriale },
+  { title: "Bagnaia sorpasso all'ultima curva", subtitle: "MotoGP", duration: "2:30", category: "MotoGP", image: imgBorussia },
+  { title: "Dunk della settimana NBA", subtitle: "NBA Highlights", duration: "4:15", category: "Basket", image: imgCannavaro },
+  { title: "Gol più belli di Gennaio", subtitle: "Compilation", duration: "8:30", category: "Calcio", image: imgLecceCagliari },
 ];
 
 const trending = [
-  { title: "Calciomercato Live - Ultime news", subtitle: "Sportitalia • Aggiornamento", duration: "45:00", category: "Talk" },
-  { title: "Analisi tattica Derby di Milano", subtitle: "Pre-partita", duration: "22:10", category: "Analisi" },
-  { title: "Intervista esclusiva: Spalletti", subtitle: "Nazionale", duration: "15:30", category: "Intervista" },
-  { title: "Serie B - Il punto della giornata", subtitle: "Highlights completi", duration: "35:00", category: "Calcio" },
-  { title: "Basket italiano: stagione review", subtitle: "Speciale", duration: "28:00", category: "Basket" },
+  { title: "Calciomercato Live - Ultime news", subtitle: "Sportitalia • Aggiornamento", duration: "45:00", category: "Talk", image: imgSpalletti },
+  { title: "Analisi tattica Derby di Milano", subtitle: "Pre-partita", duration: "22:10", category: "Analisi", image: imgChivu },
+  { title: "Intervista esclusiva: Spalletti", subtitle: "Nazionale", duration: "15:30", category: "Intervista", image: imgFonseca },
+  { title: "Serie B - Il punto della giornata", subtitle: "Highlights completi", duration: "35:00", category: "Calcio", image: imgAlisson },
+  { title: "Basket italiano: stagione review", subtitle: "Speciale", duration: "28:00", category: "Basket", image: imgCannavaro },
 ];
 
 const continueWatching = [
-  { title: "Campioni d'Italia - Ep.4", subtitle: "Documentario", duration: "12:30", progress: 65 },
-  { title: "Serie A - Giornata 24 Review", subtitle: "Highlights", duration: "8:00", progress: 30 },
-  { title: "La storia del Grande Torino", subtitle: "Documentario", duration: "45:00", progress: 80 },
+  { title: "Campioni d'Italia - Ep.4", subtitle: "Documentario", duration: "12:30", progress: 65, image: imgOsimhen },
+  { title: "Serie A - Giornata 24 Review", subtitle: "Highlights", duration: "8:00", progress: 30, image: imgEditoriale },
+  { title: "La storia del Grande Torino", subtitle: "Documentario", duration: "45:00", progress: 80, image: imgSpalletti },
 ];
 
 const Index = () => {

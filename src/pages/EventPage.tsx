@@ -5,11 +5,16 @@ import ContentCard from "@/components/ContentCard";
 import { Play, Clock, Share2, Heart, BarChart3, Users } from "lucide-react";
 import { useParams } from "react-router-dom";
 
+import imgChivu from "@/assets/content/chivu.jpg";
+import imgEditoriale from "@/assets/content/serie-a-editoriale.jpg";
+import imgSpalletti from "@/assets/content/spalletti.jpg";
+import imgOsimhen from "@/assets/content/osimhen.jpg";
+
 const relatedHighlights = [
-  { title: "Pre-partita analisi tattica", subtitle: "Studio", duration: "12:00", category: "Analisi" },
-  { title: "Inter vs Milan - Andata", subtitle: "Highlights", duration: "8:30", category: "Calcio" },
-  { title: "Top 10 Derby storici", subtitle: "Compilation", duration: "15:00", category: "Calcio" },
-  { title: "Intervista Inzaghi pre-gara", subtitle: "Esclusiva", duration: "5:20", category: "Intervista" },
+  { title: "Pre-partita analisi tattica", subtitle: "Studio", duration: "12:00", category: "Analisi", image: imgEditoriale },
+  { title: "Inter vs Milan - Andata", subtitle: "Highlights", duration: "8:30", category: "Calcio", image: imgChivu },
+  { title: "Top 10 Derby storici", subtitle: "Compilation", duration: "15:00", category: "Calcio", image: imgOsimhen },
+  { title: "Intervista Inzaghi pre-gara", subtitle: "Esclusiva", duration: "5:20", category: "Intervista", image: imgSpalletti },
 ];
 
 const EventPage = () => {
@@ -20,12 +25,8 @@ const EventPage = () => {
       <div className="container py-6">
         {/* Player */}
         <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary mb-6 max-w-5xl mx-auto">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center">
-            <div className="text-center">
-              <Play className="w-20 h-20 text-muted-foreground/30 mx-auto mb-3" />
-              <p className="text-muted-foreground">Video Player Placeholder</p>
-            </div>
-          </div>
+          <img src={imgChivu} alt="Inter vs Milan" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/30" />
           <div className="absolute top-4 left-4">
             <LiveBadge size="md" />
           </div>
