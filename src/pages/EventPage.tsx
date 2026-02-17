@@ -39,7 +39,7 @@ const EventPage = () => {
         </Link>
 
         {/* Player */}
-        <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary mb-6 max-w-5xl mx-auto">
+        <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary mb-6 max-w-7xl mx-auto">
           {playing ? (
             <>
               <iframe
@@ -84,7 +84,7 @@ const EventPage = () => {
         </div>
 
         {/* Event Info */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-2">
