@@ -2,7 +2,16 @@ import Layout from "@/components/Layout";
 import LiveBadge from "@/components/LiveBadge";
 import ContentCarousel from "@/components/ContentCarousel";
 import ContentCard from "@/components/ContentCard";
-import { Play, Clock, Share2, Heart, BarChart3, Users, ArrowLeft, X } from "lucide-react";
+import {
+  Play,
+  Clock,
+  Share2,
+  Heart,
+  BarChart3,
+  Users,
+  ArrowLeft,
+  X,
+} from "lucide-react";
 import { useParams, Link } from "react-router-dom";
 import { getContentBySlug, highlights } from "@/data/content";
 import { useState } from "react";
@@ -17,7 +26,10 @@ const EventPage = () => {
       <Layout>
         <div className="container py-20 text-center">
           <p className="text-muted-foreground text-lg">Contenuto non trovato</p>
-          <Link to="/" className="text-primary hover:underline mt-4 inline-block">
+          <Link
+            to="/"
+            className="text-primary hover:underline mt-4 inline-block"
+          >
             Torna alla Home
           </Link>
         </div>
@@ -58,7 +70,11 @@ const EventPage = () => {
             </>
           ) : (
             <>
-              <img src={content.image} alt={content.title} className="absolute inset-0 w-full h-full object-cover" />
+              <img
+                src={content.image}
+                alt={content.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <button
                   onClick={() => setPlaying(true)}
@@ -94,11 +110,19 @@ const EventPage = () => {
                     {content.category}
                   </span>
                 )}
-                {content.subtitle && <span className="text-xs text-muted-foreground">{content.subtitle}</span>}
+                {content.subtitle && (
+                  <span className="text-xs text-muted-foreground">
+                    {content.subtitle}
+                  </span>
+                )}
               </div>
-              <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground">{content.title}</h1>
+              <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground">
+                {content.title}
+              </h1>
               {content.description && (
-                <p className="text-muted-foreground mt-3 max-w-2xl leading-relaxed">{content.description}</p>
+                <p className="text-muted-foreground mt-3 max-w-2xl leading-relaxed">
+                  {content.description}
+                </p>
               )}
             </div>
             <div className="flex gap-2">
@@ -112,7 +136,7 @@ const EventPage = () => {
           </div>
 
           {/* Stats for live content */}
-          {content.isLive && content.viewers && (
+          {/* {content.isLive && content.viewers && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
               {[
                 { icon: Users, label: "Spettatori", value: content.viewers },
@@ -127,17 +151,24 @@ const EventPage = () => {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
 
           {/* Progress for continue watching */}
           {content.progress !== undefined && (
             <div className="mb-8 bg-card rounded-xl p-4 border border-border">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-muted-foreground">Progresso visione</span>
-                <span className="text-sm font-medium text-foreground">{content.progress}%</span>
+                <span className="text-sm text-muted-foreground">
+                  Progresso visione
+                </span>
+                <span className="text-sm font-medium text-foreground">
+                  {content.progress}%
+                </span>
               </div>
               <div className="w-full h-2 bg-secondary rounded-full">
-                <div className="h-full bg-primary rounded-full" style={{ width: `${content.progress}%` }} />
+                <div
+                  className="h-full bg-primary rounded-full"
+                  style={{ width: `${content.progress}%` }}
+                />
               </div>
             </div>
           )}
@@ -148,7 +179,11 @@ const EventPage = () => {
           <div className="max-w-7xl mx-auto">
             <ContentCarousel title="Contenuti Collegati">
               {related.map((item) => (
-                <ContentCard key={item.slug} {...item} href={`/event/${item.slug}`} />
+                <ContentCard
+                  key={item.slug}
+                  {...item}
+                  href={`/event/${item.slug}`}
+                />
               ))}
             </ContentCarousel>
           </div>

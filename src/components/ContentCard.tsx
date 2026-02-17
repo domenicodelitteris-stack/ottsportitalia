@@ -28,12 +28,19 @@ const ContentCard = ({
   image,
 }: ContentCardProps) => {
   return (
-    <Link to={href} className={`group flex-shrink-0 ${wide ? "w-[340px] md:w-[400px]" : "w-[200px] md:w-[240px]"}`}>
+    <Link
+      to={href}
+      className={`group flex-shrink-0 ${wide ? "w-[340px] md:w-[400px]" : "w-[200px] md:w-[240px]"}`}
+    >
       {/* Thumbnail */}
       <div className="relative aspect-video rounded-xl overflow-hidden bg-secondary mb-3">
         {/* Thumbnail */}
         {image ? (
-          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary flex items-center justify-center">
             <Play className="w-10 h-10 text-muted-foreground/40" />
@@ -74,7 +81,10 @@ const ContentCard = ({
         {/* Progress bar */}
         {progress !== undefined && (
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary">
-            <div className="h-full bg-primary rounded-r-full" style={{ width: `${progress}%` }} />
+            <div
+              className="h-full bg-primary rounded-r-full"
+              style={{ width: `${progress}%` }}
+            />
           </div>
         )}
       </div>
@@ -83,7 +93,9 @@ const ContentCard = ({
       <h3 className="font-medium text-sm text-foreground line-clamp-2 group-hover:text-primary transition-colors">
         {title}
       </h3>
-      {subtitle && <p className="text-xs text-muted-foreground mt-1">{subtitle}</p>}
+      {subtitle && (
+        <p className="text-xs text-muted-foreground mt-1">{subtitle}</p>
+      )}
     </Link>
   );
 };

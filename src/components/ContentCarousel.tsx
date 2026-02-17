@@ -8,7 +8,12 @@ interface ContentCarouselProps {
   action?: React.ReactNode;
 }
 
-const ContentCarousel = ({ title, subtitle, children, action }: ContentCarouselProps) => {
+const ContentCarousel = ({
+  title,
+  subtitle,
+  children,
+  action,
+}: ContentCarouselProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: "left" | "right") => {
@@ -24,8 +29,12 @@ const ContentCarousel = ({ title, subtitle, children, action }: ContentCarouselP
     <section className="py-6">
       <div className="container flex items-end justify-between mb-4">
         <div>
-          <h2 className="font-display font-bold text-xl md:text-2xl text-foreground">{title}</h2>
-          {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
+          <h2 className="font-display font-bold text-xl md:text-2xl text-foreground">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>
+          )}
         </div>
         <div className="flex items-center gap-2">
           {action}
