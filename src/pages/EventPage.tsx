@@ -145,11 +145,13 @@ const EventPage = () => {
 
         {/* Related */}
         {related.length > 0 && (
-          <ContentCarousel title="Contenuti Collegati">
-            {related.map((item) => (
-              <ContentCard key={item.slug} {...item} href={`/event/${item.slug}`} />
-            ))}
-          </ContentCarousel>
+          <div className="max-w-7xl mx-auto">
+            <ContentCarousel title="Contenuti Collegati">
+              {related.map((item) => (
+                <ContentCard key={item.slug} {...item} href={`/event/${item.slug}`} />
+              ))}
+            </ContentCarousel>
+          </div>
         )}
       </div>
     </Layout>
