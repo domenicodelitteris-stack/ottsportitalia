@@ -9,9 +9,7 @@ const watchHistory = [
   { title: "Calciomercato Speciale", time: "2 giorni fa", progress: 100 },
 ];
 
-const favorites = [
-  "Serie A", "Champions League", "ATP Finals", "MotoGP", "F1"
-];
+const favorites = ["Serie A", "Champions League", "ATP Finals", "MotoGP", "F1"];
 
 const AccountPage = () => {
   return (
@@ -83,7 +81,7 @@ const AccountPage = () => {
         <div className="mt-6 space-y-2">
           {[
             { icon: Bell, label: "Notifiche", desc: "Gestisci le notifiche live" },
-            { icon: CreditCard, label: "Abbonamento", desc: "Premium attivo fino al 15/03/2026" },
+            // { icon: CreditCard, label: "Abbonamento", desc: "Premium attivo fino al 15/03/2026" },
             { icon: Settings, label: "Impostazioni", desc: "Qualità video, lingua, preferenze" },
             { icon: LogOut, label: "Esci", desc: "Disconnetti il tuo account" },
           ].map((item, i) => (
