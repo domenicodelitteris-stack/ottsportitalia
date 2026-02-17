@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import ContentCard from "@/components/ContentCard";
 import { Search, Filter, Grid, List } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import imgOsimhen from "@/assets/content/osimhen.jpg";
 import imgLecceCagliari from "@/assets/content/lecce-cagliari.jpg";
@@ -32,8 +33,14 @@ const vodContent = [
 ];
 
 const VODPage = () => {
-  const [activeCategory, setActiveCategory] = useState("Tutti");
+  const [searchParams] = useSearchParams();
+  const sportParam = searchParams.get("sport");
+  const [activeCategory, setActiveCategory] = useState(sportParam || "Tutti");
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    if (sportParam) setActiveCategory(sportParam);
+  }, [sportParam]);
 
   const filtered = vodContent.filter((item) => {
     const matchCategory = activeCategory === "Tutti" || item.category === activeCategory;

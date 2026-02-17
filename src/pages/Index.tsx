@@ -17,6 +17,13 @@ import imgFonseca from "@/assets/content/fonseca.jpg";
 import imgAlisson from "@/assets/content/alisson-santos-napoli.jpg";
 import imgEditoriale from "@/assets/content/serie-a-editoriale.jpg";
 
+import imgSportCalcio from "@/assets/content/sport-calcio.jpg";
+import imgSportTennis from "@/assets/content/sport-tennis.jpg";
+import imgSportMotoGP from "@/assets/content/sport-motogp.jpg";
+import imgSportF1 from "@/assets/content/sport-f1.jpg";
+import imgSportBasket from "@/assets/content/sport-basket.jpg";
+import imgSportVolley from "@/assets/content/sport-volley.jpg";
+
 const liveNow = [
   { title: "Inter vs Milan", subtitle: "Serie A • 2° Tempo", category: "Calcio", viewers: "45.2K", image: imgChivu },
   { title: "Juventus vs Roma", subtitle: "Serie A • 1° Tempo", category: "Calcio", viewers: "32.1K", image: imgEditoriale },
@@ -127,16 +134,24 @@ const Index = () => {
             Esplora per Sport
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {["Calcio", "Tennis", "MotoGP", "F1", "Basket", "Volley"].map((sport) => (
+            {[
+              { name: "Calcio", image: imgSportCalcio },
+              { name: "Tennis", image: imgSportTennis },
+              { name: "MotoGP", image: imgSportMotoGP },
+              { name: "F1", image: imgSportF1 },
+              { name: "Basket", image: imgSportBasket },
+              { name: "Volley", image: imgSportVolley },
+            ].map((sport) => (
               <Link
-                key={sport}
-                to={`/vod?sport=${sport}`}
+                key={sport.name}
+                to={`/vod?sport=${sport.name}`}
                 className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-secondary hover:ring-2 hover:ring-primary transition-all"
               >
+                <img src={sport.image} alt={sport.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
                 <div className="absolute bottom-3 left-3">
                   <span className="font-display font-bold text-sm text-foreground group-hover:text-primary transition-colors">
-                    {sport}
+                    {sport.name}
                   </span>
                 </div>
               </Link>
