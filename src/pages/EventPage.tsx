@@ -62,7 +62,7 @@ const EventPage = () => {
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <button
                   onClick={() => setPlaying(true)}
-                  className="w-23 h-23 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary transition-colors"
+                  className="w-24 h-24 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary transition-colors"
                 >
                   <Play className="w-8 h-8 text-primary-foreground fill-current ml-1" />
                 </button>
